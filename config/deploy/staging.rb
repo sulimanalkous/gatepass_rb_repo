@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-set :stage, :production
-
-=======
->>>>>>> 22189687b0bfe32547ee25257a68b357a5ced2a0
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -12,25 +7,7 @@ set :stage, :production
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-<<<<<<< HEAD
-# Replace 127.0.0.1 with your server's IP address!
-server '192.168.1.17', user: 'deploy', roles: %w{app db web}
-=======
-set :stage, :production
-set :branch, :master
 
-role :app, %w(deploy@172.23.28.93)
-role :web, %w(deploy@172.23.28.93)
-role :db, %w(deploy@172.23.28.93)
-
-set :rails_env, "production"
-set :puma_env, "production"
-set :puma_config_file, "#{shared_path}/config/puma.rb"
-set :puma_conf, "#{shared_path}/config/puma.rb"
-
-# Replace 127.0.0.1 with your server's IP address!
-# server '192.168.1.17', user: 'deploy', roles: %w{app db web}
->>>>>>> 22189687b0bfe32547ee25257a68b357a5ced2a0
 
 # role-based syntax
 # ==================

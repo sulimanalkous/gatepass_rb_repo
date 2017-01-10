@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+<<<<<<< HEAD
 # gem 'capistrano', '~> 3.7', '>= 3.7.1'
 # gem 'capistrano-rails', '~> 1.2'
 # gem 'capistrano-passenger', '~> 0.2.0'
@@ -24,6 +25,29 @@ gem 'capistrano', '~> 3.7', '>= 3.7.1'
 gem 'capistrano-bundler', '~> 1.2'
 gem 'capistrano-rails', '~> 1.2', '>= 1.2.2'
 gem 'capistrano-rbenv', '~> 2.1'
+=======
+#gem 'capistrano', '~> 3.7', '>= 3.7.1'
+#gem 'capistrano-rails', '~> 1.2'
+#gem 'capistrano-passenger', '~> 0.2.0'
+
+group :development do
+  # gem 'capistrano', '~> 3.6'
+  # gem 'capistrano-rails', '~> 1.1'
+  # # gem 'capistrano-rbenv', '~> 2.1'
+  # gem 'capistrano-rvm'
+  # gem 'capistrano3-puma'
+  # gem 'capistrano3-nginx'
+  # gem 'capistrano-upload-config'
+  gem 'capistrano',         '~> 3.7.1', require: false
+  gem 'capistrano-rvm',     '~> 0.1',   require: false
+  gem 'capistrano-rails',   '~> 1.1.7', require: false
+  gem 'capistrano-bundler', '~> 1.1.4', require: false
+  gem 'capistrano3-puma',   '~> 1.2.1', require: false
+end
+
+
+# Add this if you're using rbenv
+>>>>>>> 22189687b0bfe32547ee25257a68b357a5ced2a0
 
 
 # Use jquery as the JavaScript library
