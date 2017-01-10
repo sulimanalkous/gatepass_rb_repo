@@ -1,0 +1,1 @@
+json.array! @gate_types, partial: 'gate_types/gate_type', as: :gate_type

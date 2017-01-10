@@ -1,0 +1,70 @@
+<br />
+<br />
+<div class="container clearfix">
+  <aside class="aside">
+    <h2>الإعدادات</h2>
+
+    <ul>
+      <li><%= link_to 'المستخدمين', users_path %></li>
+      <li><%= link_to 'أنواع التصاريح', gate_types_path %></li>
+      <li><%= link_to 'الجنسيات', nationals_path %></li>
+      <li><%= link_to 'الشركات', companies_path %></li>
+      <li><%= link_to 'الأقسام', sections_path %></li>
+    </ul>
+
+  </aside>
+
+  <section class="pull-right">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <p id="notice"><%= notice %></p>
+
+        <h1>التصاريح</h1>
+        <br />
+        <br />
+        <table class="table table-striped table-hover table-users">
+          <thead>
+            <tr>
+              <th></th>
+              <th>رقم التصريح</th>
+              <th class="date">من</th>
+              <th class="date">إلى</th>
+              <th>الشركة</th>
+              <th>القسم</th>
+              <th>السبب</th>
+              <th>ملاحظة</th>
+              <th>إسم المسجل</th>
+              <th>أخر تعديل</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @gatepasses.each do |gatepass| %>
+            <tr>
+              <td><%= gatepass.gate_type.name %></td>
+              <td><%= gatepass.id %></td>
+              <td><%= gatepass.from_date %></td>
+              <td><%= gatepass.to_date %></td>
+              <td><%= gatepass.company.name %></td>
+              <td><%= gatepass.section.name %></td>
+              <td><%= gatepass.reason %></td>
+              <td><%= gatepass.note %></td>
+              <td><%= gatepass.user.name %></td>
+              <td><%= gatepass.updated_at %></td>
+              <td><%= link_to 'Show', gatepass %></td>
+              <td><%= link_to 'Edit', edit_gatepass_path(gatepass) %></td>
+              <td><%= link_to 'Destroy', gatepass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <br>
+
+        <%= link_to 'تصريح جديد', new_gatepass_path %>
+      </div>
+    </div>
+  </section>
+</div>

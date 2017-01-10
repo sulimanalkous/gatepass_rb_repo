@@ -1,0 +1,1 @@
+json.partial! "gatepasses/gatepass", gatepass: @gatepass

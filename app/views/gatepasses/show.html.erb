@@ -1,0 +1,91 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @gatepass.user.name %>
+</p>
+
+<p>
+  <strong>Gate type:</strong>
+  <%= @gatepass.gate_type.name %>
+</p>
+
+<p>
+  <strong>National:</strong>
+  <%= @gatepass.national.name %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @gatepass.company.name %>
+</p>
+
+<p>
+  <strong>From date:</strong>
+  <%= @gatepass.from_date %>
+</p>
+
+<p>
+  <strong>To date:</strong>
+  <%= @gatepass.to_date %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @gatepass.reason %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @gatepass.person %>
+</p>
+
+<p>
+  <strong>Car no:</strong>
+  <%= @gatepass.car_no %>
+</p>
+
+<p>
+  <strong>Car type:</strong>
+  <%= @gatepass.car_type %>
+</p>
+
+<p>
+  <strong>Car color:</strong>
+  <%= @gatepass.car_color %>
+</p>
+
+<p>
+  <strong>Ref no:</strong>
+  <%= @gatepass.ref_no %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @gatepass.note %>
+</p>
+
+<div class="">
+  <h4><strong>المواد</strong></h4>
+  <table class="table" id="items">
+    <thead>
+      <tr>
+        <th>الإسم</th>
+        <th>الكمية</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @gatepass.items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.qty %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<%= link_to 'طباعة', gatepass_path(@gatepass, format: 'pdf') %> |
+<%= link_to 'تعديل', edit_gatepass_path(@gatepass) %> |
+<%= link_to 'الرجوع', gatepasses_path %>

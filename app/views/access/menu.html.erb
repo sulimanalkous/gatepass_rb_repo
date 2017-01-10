@@ -1,0 +1,18 @@
+<% @page_title = "Admin Menu" %>
+
+<div class="menu">
+  <aside class="aside">
+    <h2>الإعدادات</h2>
+
+    <ul>
+      <li><%= link_to 'المستخدمين', users_path %></li>
+      <li><%= link_to 'أنواع التصاريح', gate_types_path %></li>
+      <li><%= link_to 'الجنسيات', nationals_path %></li>
+      <li><%= link_to 'الشركات', companies_path %></li>
+      <li><%= link_to 'الأقسام', sections_path %></li>
+      <li><%= link_to 'خروج', access_logout_path %></li>
+    </ul>
+
+  </aside>
+
+</div>

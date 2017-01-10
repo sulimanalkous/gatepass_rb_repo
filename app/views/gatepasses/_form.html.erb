@@ -1,0 +1,128 @@
+<%= form_for(gatepass) do |f| %>
+  <% if gatepass.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gatepass.errors.count, "error") %> prohibited this gatepass from being saved:</h2>
+
+      <ul>
+      <% gatepass.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<fieldset>
+  <legend>البيانات</legend>
+
+  <div class="form-group">
+    <%= f.label :gate_type_id, 'نوع التصريح' %>
+    <% gate_types = @gate_types.map {|gt| [gt.name, gt.id]} %>
+    <%= f.select(:gate_type_id, gate_types ) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :section_id, 'القسم' %>
+    <%= f.select(:section_id, @sections.map { |s| [s.name, s.id] }) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ref_no, 'رقم المرجع' %>
+    <%= f.text_field :ref_no %>
+  </div>
+
+</fieldset>
+
+<fieldset>
+  <legend>التاريخ</legend>
+
+  <div class="form-group">
+    <%= f.label :from_date, 'من' %>
+    <%= f.date_select :from_date %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :to_date, 'إلى' %>
+    <%= f.date_select :to_date %>
+  </div>
+
+</fieldset>
+
+<fieldset>
+  <legend>بيانات السائق</legend>
+
+  <div class="form-group">
+    <%= f.label :person, 'إسم السائق' %>
+    <%= f.text_field :person %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :reason, 'سبب الدخول' %>
+    <%= f.text_field :reason %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :national_id, 'الجنسية' %>
+    <%= f.select(:national_id, @nationals.map {|m| [m.name, m.id]}) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :company_id, 'الشركة' %>
+    <%= f.select(:company_id, @companies.map { |c| [c.name, c.id] }) %>
+  </div>
+
+</fieldset>
+
+  <fieldset>
+    <legend>السيارة</legend>
+
+    <div class="form-group">
+      <%= f.label :car_no, 'رقم السيارة' %>
+      <%= f.text_field :car_no %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :car_type, 'نوع السيارة' %>
+      <%= f.text_field :car_type %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :car_color, 'لون السيارة' %>
+      <%= f.text_field :car_color %>
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <%= f.label :note, 'ملاحظات' %>
+    <%= f.text_field :note %>
+  </div>
+
+  <div class="form-group">
+    <h4><strong>المواد</strong></h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>الإسم</th>
+          <th>الكمية</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody id="items">
+        <%= f.fields_for :items do |item_form| %>
+          <%= render 'item_fields', f: item_form %>
+        <% end %>
+        <tr>
+          <td>
+            <div class="links">
+              <%= link_to_add_association 'إضافة مادة', f, :items %>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'حفظ', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

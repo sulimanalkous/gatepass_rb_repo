@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+    <%= wicked_pdf_javascript_include_tag "number_pages" %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</head>
+<body onload="number_pages()">
+  <div class="container" >
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="row header-hight">
+                  <div class="col-md-6 col-sm-6 col-lg-6" style="float: left;">
+                      <div class="row">
+                          <div class="span4" style="float: left;margin: 10px">
+                            <%= wicked_pdf_image_tag "mew_logo.png" %>
+                          </div>
+                          <div class="text-center" style="float:left;width: 400px;">
+                              <h3>Ministry of Electricity & Water</h3>
+                              <h3>Al zour South Power</h3>
+                              <h3>generation & water</h3>
+                              <h3>distillation station</h3>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-lg-6 text-right" style="float: right;">
+                      <div class="row">
+                          <div class="span4" style="float: right; margin: 10px;">
+                            <%= wicked_pdf_image_tag 'kw_logo.png' %>
+                          </div>
+                          <div class="text-center" style="float: right;width: 400px;"> <!--border: solid 1px red;-->
+                              <h3>وزارة الكهرباء و الماء</h3>
+                              <h3>محطة الزور الجنوبيه</h3>
+                              <h3>لتوليد القوى الكهربائية</h3>
+                              <h3> وتقطير المياه</h3>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="clearfix"></div>
+              </div>
+              <!--- END HEADER ------>
+              <div class="invoice-title" style="border-top: solid 1px #e0e0e0;border-bottom: solid 1px silver;">
+                  <h2 class="pull-left">Security</h2><h2>الأمن</h2>
+              </div>
+
+              <%= yield %>
+          </div>
+      </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+module GatepassesHelper
+end

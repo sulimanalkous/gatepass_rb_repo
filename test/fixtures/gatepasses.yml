@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  gate_type_id: 1
+  national_id: 1
+  company_id: 1
+  from_date: 2016-12-12
+  to_date: 2016-12-12
+  reason: MyString
+  person: MyString
+  car_no: MyString
+  car_type: MyString
+  car_color: MyString
+  ref_no: MyString
+  note: MyString
+
+two:
+  user_id: 1
+  gate_type_id: 1
+  national_id: 1
+  company_id: 1
+  from_date: 2016-12-12
+  to_date: 2016-12-12
+  reason: MyString
+  person: MyString
+  car_no: MyString
+  car_type: MyString
+  car_color: MyString
+  ref_no: MyString
+  note: MyString

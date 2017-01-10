@@ -1,0 +1,86 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html {
+    // zoom: 0.55; /*workaround for phantomJS2 rendering pages too large*/
+    zoom: 0.65; /*workaround for phantomJS2 rendering pages too large*/
+}
+body {
+    /*font from https://fontface.me/font/list*/
+    // font-family: 'katibeh';
+    font-size: 15pt;
+}
+
+@media all {
+    .container {
+        width: auto;
+    }
+}
+
+body {
+    direction: rtl;
+}
+.invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+}
+.header-hight {
+    line-height: 15px;
+    font-size: 0.7em;
+}
+
+.row.header-hight h2, .row.header-hight h3 {
+    margin: 5px;
+}
+
+.table-details th {
+    font-weight: bold;
+    max-width: 60px;
+}
+
+.table-details td {
+    min-width: 60px;
+}
+
+.panel-title strong {
+    font-size: 18pt;
+}
+
+.cliente {
+    margin-top:10px;
+    border: #cdcdcd 1px solid;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+div.alwaysbreak { page-break-before: always; }
+div.nobreak:before { clear:both; }
+div.nobreak { page-break-inside: avoid; }
+
+.container {
+  min-height: 1300px;
+  // border: 1px solid blue;
+}
+
+div.sign {
+  margin-top: 5em;
+  height: 100px;
+  // border: 1px solid red;
+
+}
+div.sign h2 {
+  text-align: left;
+  font-weight: bold;
+}

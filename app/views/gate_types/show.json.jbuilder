@@ -1,0 +1,1 @@
+json.partial! "gate_types/gate_type", gate_type: @gate_type

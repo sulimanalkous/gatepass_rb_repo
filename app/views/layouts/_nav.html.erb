@@ -1,0 +1,51 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header navbar-right">
+
+        <a class="navbar-brand" href="/">
+            <span><%= image_tag 'mew_logo.png', :class => 'img-logo' %>
+            </span>
+            برنامج التصاريح
+        </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+<!--            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}-->
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#">عن البرنامج</a>
+            </li>
+            <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">الإعدادات
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/common/gatepass_type">نوع التصريح</a></li>
+                    <li><a href="/common/national">الجنسيات</a></li>
+                    <li><a href="/common/section">الأقسام</a></li>
+                    <li><a href="/company">الشركات</a></li>
+                </ul>
+            </li> -->
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-left">
+            <% if session[:user_id] %>
+              <li>
+                  <p class="navbar-text"><%= User.find(session[:user_id]).name %></p>
+              </li>
+              <li>
+                <p class="navbar-text"><%= link_to 'خروج', access_logout_path %></p>
+              </li>
+            <% else %>
+
+            <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
