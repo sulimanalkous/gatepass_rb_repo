@@ -1,0 +1,55 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+    background:#f2f2f2 url(<%= asset_path 'kuwait_sl.png' %>) center bottom  repeat-x;
+    background-attachment: fixed;
+    direction: rtl;
+}
+
+.img-logo
+{
+    margin-left: 5px;
+    width:32px; height:35px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.navbar-nav > li > a {
+    font-size: 20px;
+    color: #e0e0e0;
+}
+
+.dropdown-menu {
+    background-color: #2b2b2b;
+}
+
+/* change nabvar menu text to right */
+.dropdown-menu > li > a {
+    text-align: right;
+    color: #ffffdd;
+    line-height: 50px;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .open > a
+{
+    background-color: #2b2b2b;
+    background-image: none;
+}
+
+.navbar.navbar-default.navbar-fixed-top {
+    height: 5em;
+}
+
+th
+{
+    text-align: right;
+}

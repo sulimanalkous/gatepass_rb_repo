@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gate Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gate_types.each do |gate_type| %>
+      <tr>
+        <td><%= gate_type.name %></td>
+        <td><%= link_to 'Show', gate_type %></td>
+        <td><%= link_to 'Edit', edit_gate_type_path(gate_type) %></td>
+        <td><%= link_to 'Destroy', gate_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gate Type', new_gate_type_path %>

@@ -1,0 +1,1 @@
+json.array! @gatepasses, partial: 'gatepasses/gatepass', as: :gatepass

@@ -1,0 +1,94 @@
+<div class="row" style="margin-bottom: 2em;">
+  <div class="col-md-12 text-center">
+    <h2><span  style="border-bottom: solid 1px #9e9e9e;"><%= @gatepass.gate_type.name %></span></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <table class="table table-bordered table-details">
+      <tbody>
+        <tr>
+          <th>رقم التصريح</th>
+          <td><%= @gatepass.id %></td>
+          <th>التاريخ</th>
+          <td colspan="3"><%= @gatepass.created_at.strftime('%F') %></td>
+        </tr>
+        <tr>
+          <th>من</th>
+          <td ><%= @gatepass.from_date %></td>
+          <th>إلى</th>
+          <td colspan="3"><%= @gatepass.to_date %></td>
+        </tr>
+        <tr>
+          <th>الجهة الطالبة</th>
+          <td><%= @gatepass.company.name %></td>
+          <th>القسم</th>
+          <td colspan="4"><%= @gatepass.section.name %></td>
+        </tr>
+        <th>إسم السائق</th>
+        <td><%= @gatepass.person %></td>
+        <th>الجنسية</th>
+        <td colspan="4"><%= @gatepass.national.name %></td>
+      </tr>
+      <th>رقم السيارة</th>
+      <td><%= @gatepass.car_no %></td>
+      <th>النوع</th>
+      <td><%= @gatepass.car_type %></td>
+      <th>اللون</th>
+      <td><%= @gatepass.car_color %></td>
+    </tr>
+    <tr>
+      <th>سبب الدخول</th>
+      <td colspan="3"><%= @gatepass.reason %></td>
+      <th>رقم المرجع</th>
+      <td><%= @gatepass.ref_no %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br><br>
+
+</div>
+
+<div class="page-header">
+  <h3>المواد</h3>
+</div>
+
+<% count = 0 %>
+<div class="panel panel-default">
+  <table class="table ">
+    <thead style="font-size: 18pt;">
+      <tr>
+        <td><strong>الأسم</strong></td>
+        <td><strong>الكمية</strong></td>
+        <td><strong>الإسم</strong></td>
+        <td><strong>الكمية</strong></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @gatepass.items.each do |item| %>
+        <% if count % 2 == 0 %>
+      </tr>
+      <tr>
+        <% end %>
+        <td><%= item.name %></td>
+        <td style="max-width: 40px;min-width: 30px;"><%= item.qty %></td>
+        <% count += 1 %>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br />
+<div class="panel panel-default">
+  <div class="panel-body">
+    <span><strong>ملاحظات</strong></span>
+    <span style="margin-right: 5px;"><%= @gatepass.note  %></span>
+  </div>
+</div>
+
+<div class="sign">
+  <h2>رئيس قسم الأمن و السلامة</h3>
+</div>
