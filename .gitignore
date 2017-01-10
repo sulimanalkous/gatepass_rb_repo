@@ -15,7 +15,11 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+<<<<<<< HEAD
 # config/database.yml\nconfig/secrets.yml
 
 /config/database.yml
 /config/secrets.yml
+=======
+config/database.yml\nconfig/secrets.yml
+>>>>>>> 70c7a8207c8de46c3b6e8370d97e040c086cf6b0
