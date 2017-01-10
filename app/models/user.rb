@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   validates :name, :presence => true,
                         :length => { :maximum => 50 }
-  validates :username, :length => { :within => 6..25 },
+  validates :username, :length => { :within => 4..25 },
                        :uniqueness => true
   validates :email, :presence => true,
                     :length => { :maximum => 100 },

@@ -1,5 +1,4 @@
 # config valid only for current version of Capistrano
-<<<<<<< HEAD
 lock "3.7.1"
 
 set :application, "gatepass_rb"
@@ -27,10 +26,10 @@ set :deploy_to, '/home/deploy/gatepass_rb'
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "config/database.yml", "config/secrets.yml"
+# append :linked_files, "config/database.yml", "config/secrets.yml"
 
 # Default value for linked_dirs is []
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+# append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -40,8 +39,6 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-=======
-
 
 set :repo_url,        'git@github.com:sulimanalkous/gatepass_rb_repo'
 set :application,     'gatepass_rb'
@@ -156,4 +153,3 @@ end
 # kill -s SIGUSR2 pid   # Restart puma
 
 # kill -s SIGTERM pid   # Stop puma
->>>>>>> 22189687b0bfe32547ee25257a68b357a5ced2a0

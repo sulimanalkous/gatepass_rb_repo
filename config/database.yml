@@ -50,5 +50,8 @@ test:
 production:
   <<: *default
   database: gatepass_rb_production
-  username: gatepass_rb
-  password: <%= ENV['GATEPASS_RB_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8
+  password: mmd123
+  socket: /var/run/mysqld/mysqld.sock
+  #password: <%= ENV['GATEPASS_RB_DATABASE_PASSWORD'] %>
